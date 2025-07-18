@@ -27,19 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
           <div class="participants-section">
             <h5>Current Participants</h5>
-            ${details.participants.length > 0 
-              ? (() => {
-                  const ul = document.createElement("ul");
-                  ul.className = "participants-list";
-                  details.participants.forEach(participant => {
-                    const li = document.createElement("li");
-                    li.textContent = participant;
-                    ul.appendChild(li);
-                  });
-                  return ul.outerHTML;
-                })()
-              : `<p class="no-participants">No participants yet</p>`
-            }
+            ${renderParticipantsList(details.participants)}
           </div>
         `;
 
