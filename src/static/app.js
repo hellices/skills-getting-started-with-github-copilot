@@ -78,8 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.textContent = result.message;
         messageDiv.className = "success";
         signupForm.reset();
-        // Refresh activities to show updated participants
-        fetchActivities();
+        // Update the specific activity's participant list
+        updateActivityParticipants(activity, email);
       } else {
         messageDiv.textContent = result.detail || "An error occurred";
         messageDiv.className = "error";
